@@ -12,3 +12,8 @@ The overview of the main components of the systems. The main features are to hav
 Next to having USB and ethernet, having I2C, I2S, UART and GPIO is an additional feature. 
 
 ![System Design Overview](/Docs/System%20Design/system-overview.drawio.png)
+
+# Power Design
+The overview of the power system. The calculations are made for the max possible current.
+
+![Power Design](/Docs/System%20Design/power-overview.drawio.png)
