@@ -1,0 +1,274 @@
+-------------------------------------------------------------------------
+--                                                                     --
+-- Copyright Microchip Technology Inc. 2018.  All rights reserved.     --
+--                                                                     --
+--                                                                     --
+--                         IMPORTANT NOTICE                            --
+--                                                                     --
+--                                                                     --
+-- Software License Agreement                                          --
+--                                                                     --
+-- The software supplied herewith by Microchip Technology Incorporated --
+-- (the Company) for its PIC Microcontroller is intended and           --
+-- supplied to you, the Company customer, for use solely and           --
+-- exclusively on Microchip PIC Microcontroller products. The          --
+-- software is owned by the Company and/or its supplier, and is        --
+-- protected under applicable copyright laws. All rights are reserved. --
+-- Any use in violation of the foregoing restrictions may subject the  --
+-- user to criminal sanctions under applicable laws, as well as to     --
+-- civil liability for the breach of the terms and conditions of this  --
+-- license.                                                            --
+--                                                                     --
+-- THIS SOFTWARE IS PROVIDED IN AN AS IS CONDITION. NO WARRANTIES,     --
+-- WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED   --
+-- TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A         --
+-- PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHALL NOT,   --
+-- IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR          --
+-- CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.                   --
+-------------------------------------------------------------------------
+
+-- BSDL file
+
+-- File Name:     LAN7800.bsdl
+-- File Revision: Revision: 1.0 
+-- Date created:  Date: Thursday, January 11, 2018 
+-- Support:       
+
+-- Device:        LAN7800
+--                rev 0000
+-- Package:       64 pin SQFN 
+
+
+-- Notes:
+--      
+--      
+--      
+
+entity LAN7800 is 
+    generic (PHYSICAL_PIN_MAP : string := "SQFN48");
+
+    port (
+        -- Port List
+        TR0P                 : linkage  bit;
+        TR0N                 : linkage  bit;
+        VDD25A0              : linkage  bit;
+        TR1P                 : linkage  bit;
+        TR1N                 : linkage  bit;
+        VDD25A1              : linkage  bit;
+        TR2P                 : linkage  bit;
+        TR2N                 : linkage  bit;
+        VDD25A2              : linkage  bit;
+        TR3P                 : linkage  bit;
+        TR3N                 : linkage  bit;
+        VDD25A3              : linkage  bit;
+        VDD12_SW_OUT         : linkage  bit;
+        VDD_SW_IN            : linkage  bit;
+        VDD12_SW_FB          : linkage  bit;
+        EECS                 : in       bit;
+        EEDI                 : out      bit;
+        EEDO                 : in       bit;
+        EECLK                : in       bit;
+        VDDVARIO0            : linkage  bit;
+        VDD12CORE0           : linkage  bit;
+        PME_N                : inout    bit;
+        VBUS_DET             : inout    bit;
+        SUSPEND_N            : inout    bit;
+        VDD12A0              : linkage  bit;
+        USB2_DP              : linkage  bit;
+        USB2_DM              : linkage  bit;
+        USB3_TXDP            : linkage  bit;
+        USB3_TXDM            : linkage  bit;
+        VDD12A1              : linkage  bit;
+        USB3_RXDP            : linkage  bit;
+        USB3_RXDM            : linkage  bit;
+        LED3                 : inout    bit;
+        TEST                 : in       bit;
+        RESET_N              : linkage  bit;
+        VDDVARIO1            : linkage  bit;
+        USBRBIAS             : linkage  bit;
+        VDD33A               : linkage  bit;
+        VDDVARIO2            : linkage  bit;
+        XI                   : linkage  bit;
+        XO                   : linkage  bit;
+        VDD12CORE1           : linkage  bit;
+        PME_MODE             : linkage  bit;
+        VDD12A2              : linkage  bit;
+        VDD25_REG_OUT        : linkage  bit;
+        VDD33_REG_IN         : linkage  bit;
+        REF_REXT             : linkage  bit;
+        REF_FILT             : linkage  bit);
+
+    use STD_1149_1_2001.all;
+
+    attribute COMPONENT_CONFORMANCE of LAN7800: entity is "STD_1149_1_2001";
+
+    --Pin mappings
+
+    attribute PIN_MAP of LAN7800: entity is PHYSICAL_PIN_MAP;
+
+    constant SQFN48: PIN_MAP_STRING := 
+    "TR0P                 : 1    , " &
+    "TR0N                 : 2    , " &
+    "VDD25A0              : 3    , " &
+    "TR1P                 : 4    , " &
+    "TR1N                 : 5    , " &
+    "VDD25A1              : 6    , " &
+    "TR2P                 : 7    , " &
+    "TR2N                 : 8    , " &
+    "VDD25A2              : 9    , " &
+    "TR3P                 : 10   , " &
+    "TR3N                 : 11   , " &
+    "VDD25A3              : 12   , " &
+    "VDD12_SW_OUT         : 13   , " &
+    "VDD_SW_IN            : 14   , " &
+    "VDD12_SW_FB          : 15   , " &
+    "EECS                 : 16   , " &
+    "EEDI                 : 17   , " &
+    "EEDO                 : 18   , " &
+    "EECLK                : 19   , " &
+    "VDDVARIO0            : 20   , " &
+    "VDD12CORE0           : 21   , " &
+    "PME_N                : 22   , " &
+    "VBUS_DET             : 23   , " &
+    "SUSPEND_N            : 24   , " &
+    "VDD12A0              : 25   , " &
+    "USB2_DP              : 26   , " &
+    "USB2_DM              : 27   , " &
+    "USB3_TXDP            : 28   , " &
+    "USB3_TXDM            : 29   , " &
+    "VDD12A1              : 30   , " &
+    "USB3_RXDP            : 31   , " &
+    "USB3_RXDM            : 32   , " &
+    "LED3                 : 33   , " &
+    "TEST                 : 34   , " &
+    "RESET_N              : 35   , " &
+    "VDDVARIO1            : 36   , " &
+    "USBRBIAS             : 37   , " &
+    "VDD33A               : 38   , " &
+    "VDDVARIO2            : 39   , " &
+    "XI                   : 40   , " &
+    "XO                   : 41   , " &
+    "VDD12CORE1           : 42   , " &
+    "PME_MODE             : 43   , " &
+    "VDD12A2              : 44   , " &
+    "VDD25_REG_OUT        : 45   , " &
+    "VDD33_REG_IN         : 46   , " &
+    "REF_REXT             : 47   , " &
+    "REF_FILT             : 48     " ;
+
+   attribute TAP_SCAN_IN    of EECS                       : signal is true;
+   attribute TAP_SCAN_MODE  of EECLK                      : signal is true;
+   attribute TAP_SCAN_OUT   of EEDI                       : signal is true;
+   attribute TAP_SCAN_CLOCK of EEDO                       : signal is (1.0000000000000000000e+07, BOTH);
+
+   attribute COMPLIANCE_PATTERNS of LAN7800 : entity is
+      "(TEST) (1)";
+
+   attribute INSTRUCTION_LENGTH of LAN7800: entity is 28;
+ 
+   attribute INSTRUCTION_OPCODE of LAN7800: entity is
+      "WRUSERDR0    (0000000011100000011101000010)," &
+      "WRUSERDR9    (0000000010100000010101000010)," &
+      "IDCODE       (1111111111111111111111111110)," &
+      "BYPASS       (0000000000000000000000000000, 1111111111111111111111111111)," &
+      "EXTEST       (1111111111111111111111101000)," &
+      "SAMPLE       (1111111111111111111111111000)," &
+      "PRELOAD      (1111111111111111111111111000)," &
+      "HIGHZ        (1111111111111111111111001111)," &
+      "CLAMP        (1111111111111111111111101111) " ;
+ 
+   attribute INSTRUCTION_CAPTURE of LAN7800: entity is "XXXXXXXXXXXXXXXXXXXXXXXXXX01";
+ 
+   attribute IDCODE_REGISTER of LAN7800: entity is
+      "0000"             & -- version
+      "0000000101010001" & -- part number
+      "01000100010"      & -- manufacturer's identity
+      "1";                 -- required by 1149.1
+ 
+   attribute REGISTER_ACCESS of LAN7800: entity is
+      "DR0[4]       ( WRUSERDR0 )," &
+      "DR9[8]       ( WRUSERDR9 )," &
+      "DEVICE_ID    ( IDCODE ), " &
+      "BOUNDARY     ( SAMPLE, PRELOAD, EXTEST )," &
+      "BYPASS       ( HIGHZ, CLAMP, BYPASS ) " ;
+
+
+    --Boundary scan definition
+    attribute BOUNDARY_LENGTH of LAN7800: entity is 72;
+
+    attribute BOUNDARY_REGISTER of LAN7800: entity is 
+    -- num  cell         port               function       safe     [ccell disval  rslt]
+    "  71   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  70   (BC_0       , *                , internal     , X   )                          ,"&
+    "  69   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  68   (BC_0       , *                , internal     , X   )                          ,"&
+    "  67   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  66   (BC_0       , *                , internal     , X   )                          ,"&
+    "  65   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  64   (BC_0       , *                , internal     , X   )                          ,"&
+    "  63   (BC_2       , *                , control      , 0   )                          ,"&
+    "  62   (BC_7       , LED3             , bidir        , X    ,   63     , 0     , Z   ),"&
+    "  61   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  60   (BC_0       , *                , internal     , X   )                          ,"&
+    "  59   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  58   (BC_0       , *                , internal     , X   )                          ,"&
+    "  57   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  56   (BC_0       , *                , internal     , X   )                          ,"&
+    "  55   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  54   (BC_0       , *                , internal     , X   )                          ,"&
+    "  53   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  52   (BC_0       , *                , internal     , X   )                          ,"&
+    "  51   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  50   (BC_0       , *                , internal     , X   )                          ,"&
+    "  49   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  48   (BC_0       , *                , internal     , X   )                          ,"&
+    "  47   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  46   (BC_0       , *                , internal     , X   )                          ,"&
+    "  45   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  44   (BC_0       , *                , internal     , X   )                          ,"&
+    "  43   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  42   (BC_0       , *                , internal     , X   )                          ,"&
+    "  41   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  40   (BC_0       , *                , internal     , X   )                          ,"&
+    "  39   (BC_2       , *                , control      , 0   )                          ,"&
+    "  38   (BC_7       , SUSPEND_N        , bidir        , X    ,   39     , 0     , Z   ),"&
+    "  37   (BC_2       , *                , control      , 0   )                          ,"&
+    "  36   (BC_7       , VBUS_DET         , bidir        , X    ,   37     , 0     , Z   ),"&
+    "  35   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  34   (BC_0       , *                , internal     , X   )                          ,"&
+    "  33   (BC_2       , *                , control      , 0   )                          ,"&
+    "  32   (BC_7       , PME_N            , bidir        , X    ,   33     , 0     , Z   ),"&
+    "  31   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  30   (BC_0       , *                , internal     , X   )                          ,"&
+    "  29   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  28   (BC_0       , *                , internal     , X   )                          ,"&
+    "  27   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  26   (BC_0       , *                , internal     , X   )                          ,"&
+    "  25   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  24   (BC_0       , *                , internal     , X   )                          ,"&
+    "  23   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  22   (BC_0       , *                , internal     , X   )                          ,"&
+    "  21   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  20   (BC_0       , *                , internal     , X   )                          ,"&
+    "  19   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  18   (BC_0       , *                , internal     , X   )                          ,"&
+    "  17   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  16   (BC_0       , *                , internal     , X   )                          ,"&
+    "  15   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  14   (BC_0       , *                , internal     , X   )                          ,"&
+    "  13   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  12   (BC_0       , *                , internal     , X   )                          ,"&
+    "  11   (BC_0       , *                , internal     , 0   )                          ,"&
+    "  10   (BC_0       , *                , internal     , X   )                          ,"&
+    "  9    (BC_0       , *                , internal     , 0   )                          ,"&
+    "  8    (BC_0       , *                , internal     , X   )                          ,"&
+    "  7    (BC_0       , *                , internal     , 0   )                          ,"&
+    "  6    (BC_0       , *                , internal     , X   )                          ,"&
+    "  5    (BC_0       , *                , internal     , 0   )                          ,"&
+    "  4    (BC_0       , *                , internal     , X   )                          ,"&
+    "  3    (BC_0       , *                , internal     , 0   )                          ,"&
+    "  2    (BC_0       , *                , internal     , X   )                          ,"&
+    "  1    (BC_0       , *                , internal     , 0   )                          ,"&
+    "  0    (BC_0       , *                , internal     , X   )                           ";
+
+end LAN7800;
