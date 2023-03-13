@@ -2,5 +2,5 @@ Record=TopLevelDocument|FileName=01 COVER PAGE.SchDoc|SheetNumber=1
 Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=02 POWER.SchDoc|SheetNumber=2
 Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=03 USB7002-PartA.SchDoc|SheetNumber=3
 Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=04 USB7002-PartB.SchDoc|SheetNumber=4
-Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=05 LAN7800-PartA.SchDoc|SheetNumber=5
-Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=06 LAN7800-PartB.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=05 LAN7800.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=01 COVER PAGE.SchDoc|FileName=06 RS485.SchDoc|SheetNumber=6
